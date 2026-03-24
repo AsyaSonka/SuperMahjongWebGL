@@ -6,6 +6,12 @@
     <title>Unity WebGL Player | Super Mahjong</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+
+ //---USER's code#1
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+    //----end user's code
+    
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -102,6 +108,12 @@
         });
       };
       document.body.appendChild(script);
+       //EVENTS
+        jQuery(document).ready(function ($) { //PAGE DOWNLOADED EVENT
+            vkBridge.send("VKWebAppInit", {});//init VK API
+            _isMobile = _isMobileF;//save true if user is on mobile
+            console.log('VK brigde inited user is mobile=' + _isMobileB);
+        });
     </script>
   </body>
 </html>
